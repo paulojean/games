@@ -34,7 +34,7 @@ object GamesVidageekBuild extends Build {
     base = file("games/game"),
     settings = commonSettings ++ deps(slick, sqlite))
 
-  lazy val regexGame = gameProject("regex")
+  lazy val regexGame = gameProject("regex", selenium)
 
   lazy val gitGame = gameProject("git")
 
@@ -103,7 +103,7 @@ object GamesVidageekBuild extends Build {
   }
 
   object TestDependencies {
-    val selenium = "org.seleniumhq.selenium" % "selenium-firefox-driver" % "2.32.0" % "test"
+    val selenium = "org.seleniumhq.selenium" % "selenium-firefox-driver" % "2.42.2" % "test"
     val mockito = "org.mockito" % "mockito-core" % "1.9.0" % "test"
     val junit = "junit" % "junit" % "4.11" % "test"
     val akkaTestkit = "com.typesafe.akka" %% "akka-testkit" % "2.3.6" % "test"
